@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
     <title>DogSite</title>
 </head>
 <body>
     <div class="Main">
-        <div class="Nav"></div>
-        <div class="Container"></div>
+        <div class="Nav">
+            <a href="/index.html">Home</a>
+            <a href="/search.html">Search</a>
+        </div>
+        <div id="Container"></div>
     </div>
 </body>
 </html>
+<script>
+    let breeds;
+    async function FetchData (){
+    const res= await fetch("https://dog.ceo/api/breeds/list/all")
+    const data= await res.json();
+    breeds=data.message;
+    // console.log(breeds);
+
+    let container= document.getElementById("Container");
+    breeds.map(item=>{
+        let card= document.createElement("div");
+        card.innerText= item;
+
+        container.appendChild(card);
+    });
+
+    return;
+    }
+    FetchData();
+
+    
+
+</script>

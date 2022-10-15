@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(31, 10, 51);
+}
+.Main{
+    width: 100%;
+}
+.Nav{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(35, 35, 109);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.Nav a{
+    color: rgb(137, 168, 255);
+}
+.Container{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.Container button{
+    background-color: rgb(35, 35, 109);
+    border: none;
+    height: 20px;
+    color: rgb(137, 168, 255);
+    border-radius: 5px;
+}
+.Container input{
+    border: none;
+    height: 20px;
+    border-radius: 5px;
+    background-color: rgb(137, 168, 255);
+    color: rgb(35, 35, 109);
+}

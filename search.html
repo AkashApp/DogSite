@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/search.css">
+    <title>Dog Site</title>
+</head>
+<body>
+    <div class="Main">
+        <div class="Nav">
+            <a href="/index.html">Home</a>
+            <a href="/search.html">Search</a>
+        </div>
+        <div class="Content">
+            <div class="Container">
+                <input id="searchbox" type="text" placeholder="Enter Breed Name" />
+                <button id="searchbutton">Search</button>
+            </div>
+            <div class="Images"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let breedname= document.getElementById("searchbox");
+    let SearchButton = document.getElementById("searchbutton");
+    SearchButton.onclick = async function(){
+        let res= await fetch(`https://dog.ceo/api/breed/${breedname.value}/images`);
+        let data= await res.json();
+        let image= document.getElementById("Images");
+        data.message.map((item)=>{
+            let dev= document.createElement("div");
+            let img= document.createElement("img");
+            img.src= item;
+            dev.append(img)
+            image.append(dev);
+        });
+    }
+
+</script>
